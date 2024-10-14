@@ -1,0 +1,216 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication21.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <style>
+        #sayfa{
+            height:1800px;
+            width:1200px;
+            margin:auto;
+            background-color:white;
+
+        }
+         #banner{
+            height:200px;
+            width:1190px;
+            margin:auto;
+            background-color:white;
+           
+        }
+          #anamenu{
+            height:50px;
+            width:1190px;
+            margin:auto;
+            background-color:white;
+           
+        }
+          #icerik{
+            height:300px;
+            width:300px;
+            margin:auto;
+            background-color:white;
+          
+            position:relative;
+            float:left;
+            top:30px;
+        }
+               #altmenu{
+            height:100px;
+            width:1190px;
+            margin:auto;
+            background-color:white;
+            border-style:solid;
+          position:relative;
+            top: 455px;
+            left: 2px;
+        }
+        #sabit {
+        
+        height:800px;
+        width:585px;
+        margin:auto;
+        }
+           ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #34495e;
+}
+
+li {
+    display:inline-block;
+}
+
+li a {
+    display:inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ li a:hover{
+    background-color:#778899; 
+}
+
+ul li ul {
+    background-color:#2c3e50;
+    display:none;
+    position:absolute;
+    width:100px
+}
+
+ul li:hover ul{
+    display:block;
+}
+li ul li {
+    display:block; 
+}
+
+
+        .foot {
+        text-align:center;
+        }
+
+           .auto-style5 {
+            height: 30px;
+            width: 300px;
+            background-color:#2c3e50;
+            
+        }
+               .auto-style7 {
+            color: white;
+        }
+
+        .auto-style8 {
+            height: 150px;
+            width: 1186px;
+        }
+
+
+
+        .auto-style37 {
+            font-size: small;
+        }
+         .logoo {
+            color:black;
+            background-color: white;
+            font-family: 'Script MT';
+            width:150px;
+            text-align:center;
+         
+        }
+
+
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="sayfa">
+            <div id="banner">
+                <div id="logo"><img src="resimler/banner.jpg" class="auto-style8"/>
+            </div>
+                  <span class="logoo">
+                <h2>HOME STORE</h2></span>
+           
+            <div id="anamenu">
+                &nbsp;<ul>
+             <li><a href="anasayfa.aspx" >Ürünler</a></li>
+           <li><a href="iletisim.aspx">İletişim</a></li>
+             <li><a href="uyelik.aspx">Üye Ol</a></li>
+            <li> <a href="sepet.aspx">Sepetim</a></li> 
+            <li> <a href="siparis.aspx">Siparişlerim</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#"><asp:Label ID="lblKullanici" runat="server" Text="Label" CssClass="auto-style37" ></asp:Label> </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://localhost:50182/anasayfa.aspx">
+                <asp:Button ID="btnCikis" runat="server" Text="Çıkış Yap" OnClick="btnCikis_Click" Width="58px" Height="20px" /><asp:LinkButton ID="LinkButton1" runat="server"  OnClick="LinkButton1_Click1">Giriş Yap</asp:LinkButton>
+ 
+                
+            
+                   </li> 
+                
+            
+            </ul>
+            </div>
+              <div id="icerik">
+                   <div class="auto-style5">
+
+                        <strong>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <asp:Label ID="Label1" runat="server" Text="KATEGORİLER" CssClass="auto-style7"></asp:Label>
+                        <br />
+                        <br />
+
+                    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" Width="249px" Height="16px" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" GridLines="Both" CssClass="auto-style29 auto-style30" DataKeyField="bolumID" >
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <ItemStyle BackColor="White" ForeColor="#003399" />
+                        <ItemTemplate>
+                          
+                             <a href="kategoridetay.aspx?katno=<%#Eval("bolumID") %>">  <asp:Label ID="bolumAdLabel" runat="server" Text='<%# Eval("bolumAd") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                        <SelectedItemStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                    </asp:DataList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tiaret sitesiConnectionString2 %>" SelectCommand="SELECT * FROM [bolum]"></asp:SqlDataSource>
+                        </strong>
+
+                    </div>
+            </div>
+
+
+
+            <div id="sabit">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                 <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                 <p>
+                        &nbsp;</p>
+                 <p>
+                        &nbsp;</p>
+                 <p>
+                        &nbsp;</p>
+            </asp:ContentPlaceHolder>
+                </div>
+        </div>
+
+    </form>
+</body>
+</html>

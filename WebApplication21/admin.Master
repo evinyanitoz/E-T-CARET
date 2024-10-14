@@ -1,0 +1,329 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="WebApplication21.admin" %>
+
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+    
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+     
+      
+  body {
+    font-family:'Century Gothic'; 
+    color:white;
+}
+#genel
+{
+     width:960px; 
+     margin:0 auto; 
+     padding:-5px;
+     background-color:white;
+}
+#header {
+    width:937px;
+    background-color:white;
+    height:150px;
+    padding:10px;
+        display:block;
+
+}
+#banner {
+    padding:28px 0 0 20px;
+    height:130px;
+    width:908px;
+    background-color:gray;   
+}
+#menu {
+    height:50px;
+    width:932px;
+    background-color:gray;
+            margin-left: 7px;
+        }
+
+      #ana {
+    height:50px;
+    width:50px;
+    background-color:white;
+    margin:5px 0;
+    margin-right:20px;
+     display:block;
+
+
+}
+#orta {
+     width:940px; 
+     height:940px;
+     margin:0 auto; 
+     padding:10px;
+     background-color:white;
+      display:block;
+}
+
+#ortasag {
+    height:940px;
+    width:930px;
+    background-color:white;   
+    float:left;
+    display:block;
+     padding-right:5px;
+    
+}
+
+        #alt {
+            height: 55px;
+            width: 932px;
+            background-color: #FFFFCC;
+            margin-left: 4px;
+            text-align: left;
+        }
+
+        
+      
+    
+       .DataList1 {
+            height:100px;
+        width:200px;
+            }
+      
+        
+        ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #34495e;
+}
+
+li {
+    display:inline-block;
+}
+
+li a {
+    display:inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ li a:hover{
+    background-color:#778899; 
+}
+
+ul li ul {
+    background-color:#2c3e50;
+    display:none;
+    position:absolute;
+    width:100px
+}
+
+ul li:hover ul{
+    display:block;
+}
+li ul li {
+    display:block; 
+}
+       
+      
+        
+        .logo{
+
+            width: 79px;
+            height: 53px;
+        }
+      
+        
+        .textbox1 {
+    padding: 1px 20px;
+    border: 0;
+    height: 25px;
+    width: 275px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+    -moz-box-shadow: 1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+    -webkit-box-shadow: 1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+    -webkit-background-clip: padding-box;
+    outline: 0;
+
+}
+        
+        .arama{
+             width: 280px;
+            height: 46px;
+            margin-left: 532px;
+        }
+        a:hover#aramabuton {
+            background-color:gray;
+        }
+        
+
+       
+
+
+        .resimbanner {
+            height: 122px;
+        }
+
+        .logo {
+            color: #990000;
+            background-color: white;
+            font-family: 'Script MT';
+            width:150px;
+        }
+
+
+          .ec {
+           background-color:white;
+         width:250px;
+         font-family:'Bell MT';
+        }
+
+         
+
+        .giris {
+            margin-top:3px;
+            height:auto;
+            width:auto;
+
+        }
+
+
+
+        .auto-style37 {
+            font-size: small;
+        }
+
+
+
+        .auto-style39 {
+            width: 934px;
+        }
+
+
+
+        .auto-style41 {
+            height: 156px;
+            width: 918px;
+        }
+
+
+
+        </style>
+
+
+        
+      
+</head>
+
+<body>
+  
+    <form id="form1" runat="server">
+  
+    <div id="genel">
+        <div id="header">
+            <img src="resimler/banner.jpg" class="auto-style41" /></div>
+           
+        </div>
+
+
+              </div>
+        <div id="genel">
+      <div id="menu" class="auto-style39" >
+            
+       <ul>
+           <li><a href="urunler.aspx" >Ürünler</a></li>
+           <li><a href="uyeler.aspx">Üyeler</a></li>
+            <li> <a href="siparisler.aspx">Siparişler</a></li> 
+             <li><a href="stok.aspx">Stok</a></li> 
+              <li> <a href="anasayfa.aspx">Siteye Git</a></li> 
+           
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+             <li> <a href="#"><asp:Label ID="lblKullanici" runat="server" Text="Label" CssClass="auto-style37" ></asp:Label> </a></li>
+            <li> </li>  &nbsp;
+                <asp:Button ID="Button1" runat="server" Text="Çıkış Yap" OnClick="Button1_Click" />
+ 
+                
+            
+                </ul>   
+
+
+            </div>
+                    </div>
+        <div id="orta" >
+
+
+
+            <div id="ortasag" style="background-color: #f5f5f9" >
+   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                    <p>
+                        &nbsp;</p>
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        </form>
+        </body>
+
+
+    </html>
+
+
+
+
+     
